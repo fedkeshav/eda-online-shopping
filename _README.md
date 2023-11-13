@@ -1,1 +1,2 @@
 # exploratory-data-analysis---online-shopping-in-retail285
+This project shows how to do exploratory data analysis on a online retail shopping data. This step is key in most projects before using the data for other purposes such as data science models.

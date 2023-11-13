@@ -11,7 +11,11 @@ db_extract.df_to_csv(df, 'customer_data.csv')
 
 
 # %%
+# Exploring the data
 df.info()
-# %%
-df.head(30)
+df.head(20)
+df.describe()
+
+#df['product_related'].value_counts()
+# df['product_related'].describe()
 # %%
