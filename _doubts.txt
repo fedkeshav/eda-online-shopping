@@ -1,3 +1,40 @@
 Milestone 2 - Task 3
 
 1. What is the difference between bounce rates and exit rates?
+
+
+Milestone 3 
+1. Why the first code does not work but second does? First one gives weird values
+df['admin_duration_median'] = df.groupby('administrative')['administrative_duration'].median()
+df['admin_duration_median'] = df.groupby('administrative')['administrative_duration'].transform('median')
+
+2. In task 3, we need to create a plotter class to visualise removal of NULL. What is this?
+
+
+3.  In below code, when I use df = drop_null(), null is not dropped. But it works if I create a new dataframe = drop_null. Why?   
+    
+    def drop_null(self, df: pd.DataFrame, column: str) -> pd.DataFrame:
+        '''Drops missing values - to be used when percent of missing values are very low'''
+        df = df.dropna(subset=[column])
+        return df
+
+4. For skewness
+- Should I treat variables such as administrative as categorical and not both about skewness?
+- How to set appropriate skewness threshold and identify which variables to transform?
+- Given CLT, could I have skipped skewness transformation altogether?
+- Should I delete original columns that have been transformed?
+
+5. For outliers
+- Shouldn't we check this before skewness?
+- Swarmplot function takes forever with big dataset. Anyway round it?
+
+GENERAL
+- Should my main file generate all the charts? Doesn't sound useful.
+- For correlation heatmap, struggling to get values annotated. Only top row comes with values. Why?
+
+
+
+NEXT STEPS
+- update github
+- Incorporate review from previous two projects
+
