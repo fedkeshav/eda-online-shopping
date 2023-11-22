@@ -95,9 +95,9 @@ class DataFrameTransform():
             Original column name and new column name
         
         Returns:
-            Dataframe with original and transformed variable       
+            None       
         '''
-        df[column2] = df[column1].map(lambda i: np.log(i) if i > 0 else 0)
+        df[column2] = df[column1].map(lambda i: np.log(i+1))
     
     def skewness_boxcox_transformation (self, df: pd.DataFrame, column1: str, column2: str, constant: float) -> None:
         '''
@@ -107,7 +107,7 @@ class DataFrameTransform():
             Original column name and new column name
         
         Returns:
-            Dataframe with original and transformed variable       
+            None       
         '''        
         df[column2], lambda_value = boxcox(df[column1] + constant)
 

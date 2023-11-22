@@ -40,7 +40,8 @@ class RDSDatabaseConnector():
         Returns:
             Engine to the database
         '''
-        creds_dict = self.read_db_creds('credentials.yaml')
+        path = '/Users/keshavparthasarathy/Documents/AICore_projects/exploratory-data-analysis---online-shopping-in-retail285/'
+        creds_dict = self.read_db_creds(path+'credentials.yaml')
         creds = list(creds_dict.values())
         url = (f"{creds[0]}+{creds[1]}://{creds[2]}:{creds[3]}@{creds[4]}:{creds[5]}/{creds[6]}")
         engine = db.create_engine(url)

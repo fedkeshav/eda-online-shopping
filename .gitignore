@@ -3,6 +3,8 @@
 customer_data.csv
 z*.py
 __pycache__/
+*.pyc
 .DS_Store
 *.txt
 _doubts.txt
+.gitignore
