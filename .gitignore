@@ -1,6 +1,4 @@
 *.yaml
-*.csv
-customer_data.csv
 z*.py
 __pycache__/
 *.pyc

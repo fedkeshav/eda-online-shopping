@@ -148,7 +148,7 @@ def ordering_columns(df: pd.DataFrame) -> pd.DataFrame:
 #%%
 #3. EXTRACTING THE DATA FROM THE DATABASE
 df = db_extract.read_rds_data(engine, 'customer_activity')
-db_extract.df_to_csv(df, 'customer_data.csv')
+db_extract.df_to_csv(df, '/Users/keshavparthasarathy/Documents/AICore_projects/exploratory-data-analysis---online-shopping-in-retail285/customer_data.csv')
 numeric_features = ['administrative',
                     'administrative_duration',
                     'informational',
