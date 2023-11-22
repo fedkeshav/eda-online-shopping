@@ -2,6 +2,7 @@
 *.csv
 customer_data.csv
 z*.py
-*__pycache__
-*.DS_Store
+__pycache__/
+.DS_Store
+*.txt
 _doubts.txt
