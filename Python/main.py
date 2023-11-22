@@ -81,7 +81,7 @@ def skewness_cleaning(df: pd.DataFrame) -> pd.DataFrame:
 def skewness_pre_post(df: pd.DataFrame) -> None:
     '''
     Summarises skewness of original and transformed variable
-
+    
     Inputs:
         Dataframe
     
