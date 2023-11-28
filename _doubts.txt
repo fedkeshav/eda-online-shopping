@@ -1,7 +1,6 @@
+0. Why are some of the files in gitignore like pycache still showing in Github?
 Milestone 2 - Task 3
-
 1. What is the difference between bounce rates and exit rates?
-
 
 Milestone 3 
 1. Why the first code does not work but second does? First one gives weird values

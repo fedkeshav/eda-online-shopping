@@ -25,7 +25,7 @@ Key statistical packages
 3. Activate the environment using 'conda activate your_environment_name'
 
 ## Folder structure
-- The raw data can be found in the file 'customer_data.csv'.
+- The raw data can be found in the file 'customer_data.csv'. The cleaned data (for null values, skewness etc) can be found in 'Cleaned_customer_data,csv'.
 - The packages needed to run the code can be found in 'environment.yml'
 - All python files required to explore and analyse the data can be found in the 'Python' folder. The 'db' files are where classes and functions are created. Rest of the python files start with 'data' - they contain data extraction, data exploration and data analysis.
 - The output of the exploration and analyses can be found in the 'Outputs' folder.
