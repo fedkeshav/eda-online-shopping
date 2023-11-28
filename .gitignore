@@ -2,6 +2,5 @@
 z*.py
 __pycache__/
 .DS_Store
-*.txt
-_doubts.txt
+z_doubts.txt
 .gitignore
