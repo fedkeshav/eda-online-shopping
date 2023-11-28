@@ -28,11 +28,15 @@ df['admin_duration_median'] = df.groupby('administrative')['administrative_durat
 - Shouldn't we check this before skewness?
 - Swarmplot function takes forever with big dataset. Anyway round it?
 
+6. Why do value counts still return Northern and Southern Africa with zero count? Creates problem when I do groupby sum functions.
+
+7. Analysis and visualisation can be part of main or should be a separate file?
 GENERAL
-- Why are my gitignore files being pushed to github? E.g., doubts.txt
+- Why are my gitignore files being pushed to github? E.g., Gitignore is not implementing doubts.txt. So I deleted in on github.com. But then my local and remote differ. Tricky situation
 - After pushing unnecessary files, I deleted them in github. That affects history in github vs local. How to solve?
 - Should my main file generate all the charts? Doesn't sound useful.
 - For correlation heatmap, struggling to get values annotated. Only top row comes with values. Why?
 - Why were we asked to save the csv?
+- 
 
 

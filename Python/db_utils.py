@@ -2,6 +2,7 @@ import pandas as pd
 import sqlalchemy as db
 from sqlalchemy.engine import Connection
 from typing import TextIO
+from typing import Union
 import yaml
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -123,8 +124,19 @@ class DataFrameInfo():
             None
         ''' 
         plt.figure(figsize=(10,6))
-        sns.countplot(x=column, data = df)
-        plt.title((f'Count values of {column}'))
+        order = df[column].value_counts().index
+        ax = sns.countplot(x=column, data = df,order=order)
+        # Customize x-axis labels
+        rotation_angle = 45
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=rotation_angle, ha='right')  # Adjust rotation and horizontal alignment
+        # Calculating and annotating with percentage values
+        total = len(df[column])
+        for p in ax.patches:
+            percentage = '{:.1f}%'.format(100 * p.get_height()/total)
+            x = p.get_x() + p.get_width() / 2 - 0.05
+            y = p.get_height() + 0.5
+            ax.annotate(percentage, (x, y), ha='center', va='bottom', fontsize=10, color='black')
+        plt.title((f'Count values and percentages of {column}'))
         plt.show()
 
     def explore_continuous_variable(self,df: pd.DataFrame, column: str) -> None:
@@ -330,3 +342,28 @@ class Plotter():
         plt.figure(figsize=(10,5))
         sns.scatterplot(x=df[x_column], y=df[y_column])
         sns.regplot(x=df[x_column], y=df[y_column])
+
+    def barplot(self, df: Union[pd.DataFrame, pd.Series], stack: bool, xlabel: str, ylabel: str, title: str, legend_title:str = None, ycolumn:str = None) -> None:
+        '''
+        Displays barplot
+
+        Inputs:
+            DataFrame along with with desired labels and legends
+
+        Returns:
+            None     
+        '''
+        ax = df.plot(kind='bar',stacked=stack, figsize=(10, 6))
+        # Add labels to the bars where needed
+        if ycolumn is not None:        
+            for i, value in enumerate(df[ycolumn]):
+                ax.text(i, value + 0.25, f"{value:.2f}", ha='center', va='bottom')
+        # Add labels and title and legend
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+        plt.title(title)
+        if legend_title is not None:
+            ax.legend(title=legend_title, loc='upper right', bbox_to_anchor=(1.25, 1))
+        else:
+            ax.legend(loc='upper right', bbox_to_anchor=(1.25, 1))
+        plt.show()
